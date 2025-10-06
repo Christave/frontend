@@ -737,7 +737,20 @@
 
         /* Responsive Design */
        /* Mobile Menu Fix - Responsive Design */
+/* Mobile Menu Fix - Responsive Design */
 @media (max-width: 768px) {
+    header {
+        position: fixed !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    body {
+        padding-top: 70px; /* Add padding to body to account for fixed header */
+    }
+
     .header-container {
         flex-direction: row;
         justify-content: space-between;
@@ -825,11 +838,6 @@
     .form-row {
         flex-direction: column;
         gap: 0;
-    }
-
-    /* Ensure header stays on top of everything */
-    header {
-        position: relative;
     }
 }
     </style>
