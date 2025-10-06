@@ -736,49 +736,102 @@
         }
 
         /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                gap: 15px;
-            }
+       /* Mobile Menu Fix - Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        position: relative;
+    }
 
-            nav ul {
-                gap: 15px;
-            }
+    .mobile-menu {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 1001;
+        font-size: 24px;
+        cursor: pointer;
+    }
 
-            .hero h2 {
-                font-size: 32px;
-            }
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: white;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        padding: 0;
+        z-index: 1000;
+        border-top: 1px solid #eee;
+    }
 
-            .steps {
-                flex-direction: column;
-            }
+    .nav-menu.active {
+        display: block;
+    }
 
-            .mobile-menu {
-                display: block;
-            }
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+    }
 
-            .nav-menu {
-                display: none;
-                width: 100%;
-                text-align: center;
-                margin-top: 15px;
-            }
+    .nav-menu ul li {
+        width: 100%;
+        text-align: left;
+        padding: 0;
+        border-bottom: 1px solid #eee;
+    }
 
-            .nav-menu.active {
-                display: block;
-            }
+    .nav-menu ul li:last-child {
+        border-bottom: none;
+    }
 
-            .nav-menu ul {
-                flex-direction: column;
-                gap: 10px;
-            }
+    .nav-menu a {
+        display: block;
+        padding: 15px 20px;
+        font-size: 16px;
+        color: #333;
+        text-decoration: none;
+        transition: background-color 0.3s;
+    }
 
-            .form-row {
-                flex-direction: column;
-                gap: 0;
-            }
-        }
+    .nav-menu a:hover {
+        background-color: #f5f7fa;
+        color: var(--primary);
+    }
+
+    .logo {
+        margin-left: 20px;
+    }
+
+    .auth-buttons {
+        display: none;
+    }
+
+    .hero h2 {
+        font-size: 32px;
+    }
+
+    .steps {
+        flex-direction: column;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    /* Ensure header stays on top of everything */
+    header {
+        position: relative;
+    }
+}
     </style>
 </head>
 <body>
@@ -1061,7 +1114,7 @@
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul>
-                        <li><i class="fas fa-envelope"></i> info@edusuccess.cm</li>
+                        <li><i class="fas fa-envelope"></i> edusuccess97@gmail.com</li>
                         <li><i class="fas fa-phone"></i> +237 686 940 697</li>
                         <li><i class="fas fa-map-marker-alt"></i> Buea, Cameroon</li>
                     </ul>
